@@ -3,321 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Étude sur l'Église Locale - Réal Gaudreault</title>
+    <title>Nature et Mission de l'Église Locale</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e67e22;
-            --bg-color: #f4f6f7;
-            --text-color: #333;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { font-size: 1.2rem; opacity: 0.9; }
+        :root { --primary: #2c3e50; --accent: #e67e22; --bg: #f4f6f7; --text: #333; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: var(--text); background: var(--bg); margin: 0; }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .intro-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-        .intro-text { flex: 1; min-width: 300px; }
-        .intro-image { flex: 1; min-width: 300px; text-align: center; }
-        .intro-image img { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
+        h1 { margin: 0; font-size: 2.5rem; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; margin-top: 1rem; }
 
-        h2 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 0.5rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.05); margin-top: -2rem; border-radius: 8px; }
+        
+        h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-top: 3rem; }
+        h3 { color: #d35400; margin-top: 2rem; }
+        
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
+        .cta-button { display: block; width: fit-content; margin: 3rem auto; background: var(--accent); color: white; padding: 1rem 2rem; text-decoration: none; font-size: 1.2rem; font-weight: bold; border-radius: 50px; transition: transform 0.2s, background 0.2s; text-align: center; }
+        .cta-button:hover { background: #d35400; transform: scale(1.05); }
 
-        .sessions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        
-        .card-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .session-number { background: var(--accent-color); padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem; }
-        
-        .card-body { padding: 1.5rem; flex-grow: 1; }
-        .card-title { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: bold; }
-        .card-verse { font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 1rem; border-left: 3px solid var(--accent-color); padding-left: 10px; }
-        
-        .btn {
-            display: block;
-            background-color: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 0.8rem;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn:hover { background-color: #d35400; }
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--primary); color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: #2c3e50;
-            color: white;
-            margin-top: 3rem;
-        }
+        .intro-box { background-color: #e8f6f3; padding: 1.5rem; border-left: 5px solid #1abc9c; margin-bottom: 2rem; border-radius: 4px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Réflexion sur l'Église Locale</h1>
-    <p>Une étude biblique basée sur la série de M. Réal Gaudreault</p>
+    <h1>Aide-Mémoire</h1>
+    <p class="subtitle">Nature et mission de l'église locale</p>
 </header>
 
 <div class="container">
-    <section class="intro-section">
-        <div class="intro-text">
-            <h2>À propos de cette étude</h2>
-            <p>Ce parcours a pour but de comprendre les piliers, le message et la vie communautaire qui définissent l'Église selon les Écritures. L'église locale n'est pas une option, mais une ordonnance divine essentielle à la foi chrétienne.</p>
-            <p><strong>Les points clés :</strong></p>
-            <ul>
-                <li>Une institution intemporelle avec un message non négociable.</li>
-                <li>Un lieu de croissance et de renoncement à soi.</li>
-                <li>Une communauté fondée sur l'enseignement, la communion, la fraction du pain et la prière.</li>
-            </ul>
-        </div>
-        <div class="intro-image">
-            <img src="eglise locale saine.png" alt="Schéma église locale saine">
-        </div>
-    </section>
-
-    <h2>Les 15 Séances</h2>
-    <div class="sessions-grid">
-        
-        <article class="card">
-            <div class="card-header">
-                <span>Fondements</span><span class="session-number">01</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Les Fondements d'une Église Saine</div>
-                <div class="card-verse">Hébreux 10:23-25</div>
-                <p>Constat des "grands brûlés" de l'église et réaffirmation de l'église locale comme ordonnance divine et lieu de repos.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=mft35XtMZ98&t=2s" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Leadership</span><span class="session-number">02</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Maturité et Modèle Pastoral</div>
-                <div class="card-verse">Philippiens 2:2-4</div>
-                <p>La santé d'une église dépend de la maturité des cœurs. Le modèle pastoral est David : un berger intègre selon le cœur de Dieu.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=niM9PXquW_E" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Foi & Obéissance</span><span class="session-number">03</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">L'Église comme École de Foi</div>
-                <div class="card-verse">1 Pierre 2:13</div>
-                <p>La foi n'est pas un sentiment mais une obéissance. L'église est pour l'édification des saints, pas d'abord pour plaire aux visiteurs.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=pBXv51mzX2w" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Vérité</span><span class="session-number">04</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Vérité vs Dictature du Ressenti</div>
-                <div class="card-verse">1 Timothée 3:15</div>
-                <p>Critique de l'idéologie du "ressenti". L'église est la colonne de la vérité objective, pas un lieu de validation émotionnelle.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=cmkmj6OrOm8" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Culte</span><span class="session-number">05</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Culte, Musique et Prédication</div>
-                <div class="card-verse">Josué 1:6-8</div>
-                <p>Le culte doit être régulé par l'Écriture. Plaidoyer pour la prédication textuelle contre le "fast-food" spirituel thématique.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=OAhQuFleNgE" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Croissance</span><span class="session-number">06</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">La Croissance par la Saine Doctrine</div>
-                <div class="card-verse">Éphésiens 4:11-16</div>
-                <p>La vraie croissance vient de la "nourriture solide". Les ministères sont donnés pour perfectionner les saints vers la maturité.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=UMRdVxF15is" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Intégrité</span><span class="session-number">07</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Intégrité et Origine de l'Ecclésia</div>
-                <div class="card-verse">Éphésiens 1:4</div>
-                <p>L'intégrité est le remède à l'hypocrisie religieuse. L'Église est le "Plan A" éternel de Dieu, rassemblant Juifs et païens.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=2BTB8BSeVhg" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Fondation</span><span class="session-number">08</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">« Je bâtirai mon Église »</div>
-                <div class="card-verse">Matthieu 16:18</div>
-                <p>Jésus est le bâtisseur. Distinction entre bâtir avec de l'or (vérité) ou du foin (idées humaines). Rejet de la primauté papale.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=Qg9d_pUpvj0" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Universelle</span><span class="session-number">09</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Église Universelle et Fin du Temple</div>
-                <div class="card-verse">Jean 4:21-24</div>
-                <p>L'Église remplace le Temple. L'adoration se fait désormais en Esprit et en Vérité, sans retour aux sacrifices.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=qCEoYEvOUzk" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Piliers</span><span class="session-number">10</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Les 4 Piliers de l'Église Locale</div>
-                <div class="card-verse">Actes 2:42</div>
-                <p>L'unité repose sur 4 piliers divins : l'enseignement des apôtres, la communion fraternelle, la fraction du pain et la prière.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=a5U50Tmozqg" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Technologie</span><span class="session-number">11</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Institution Intemporelle</div>
-                <div class="card-verse">1 Corinthiens 1:18</div>
-                <p>Le message de la Croix est un scandale immuable. La technologie peut évoluer pour le diffuser, sans diluer le message.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=E6uJWsWivTE" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Liberté</span><span class="session-number">12</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Liberté Chrétienne et Postmodernisme</div>
-                <div class="card-verse">Jean 8:32-36</div>
-                <p>La liberté chrétienne n'est pas l'autonomie individualiste, mais l'esclavage à la justice. Critique de l'église "émergente".</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=9Q-BVizNICE&t" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Vocation</span><span class="session-number">13</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Vocation et « Rêverie Pieuse »</div>
-                <div class="card-verse">Actes 9:15-16</div>
-                <p>Mise en garde de Bonhoeffer contre la "rêverie pieuse". Aimer la communauté réelle plus que son rêve idéal de communauté.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=EySf72jWhqE" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Confession</span><span class="session-number">14</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">La Confession des Fautes</div>
-                <div class="card-verse">Matthieu 5:23-24</div>
-                <p>La confession est le muscle de l'unité. Le pardon biblique suit l'ordre : Confession → Pardon → Réparation.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=2Bu8iX8PeOU" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <span>Bénédiction</span><span class="session-number">15</span>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Confiance, Pardon et Bénédiction</div>
-                <div class="card-verse">Psaume 133</div>
-                <p>L'église doit être un lieu de grâce réelle. C'est là, où les frères demeurent ensemble, que Dieu envoie la bénédiction.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=g-nsMw5zWKk" class="btn" target="_blank">Voir la vidéo</a>
-        </article>
-
+    
+    <div class="intro-box">
+        <p><strong>Bienvenue.</strong> Ce document est une synthèse des idées fondamentales de la série "Réflexion sur l'église locale". Il pose les bases pour comprendre l'église comme un organisme vivant et une ordonnance divine.</p>
     </div>
-</div>
 
-<footer>
-    <p>Étude réalisée à partir des enseignements de M. Réal Gaudreault.</p>
-    <p>Site réalisé pour l'église locale.</p>
-</footer>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/xe-gFJ2GirA" title="Le plan d'une église saine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
-</body>
-</html>
+    <a href="seances.html" class="cta-button">Accéder aux 15 Séances Vidéo →</a>
+
+    <hr>
+
+    <h2>1. Qu'est-ce que l'église locale et pourquoi est-elle essentielle ?</h2>
+    
+    <h3>1.1. Une ordonnance, pas une option</h3>
+    <p>L'appartenance à une église locale n'est pas une simple préférence personnelle, mais une ordonnance de Dieu. Le Nouveau Testament est construit sur l'idée que la foi chrétienne est conçue pour être vécue en communauté ; la négliger est contraire à l'Écriture et constitue un pas vers l'apostasie. La marche avec Dieu ne peut se faire seul, dans son coin.</p>
+
+    <h3>1.2. Le lieu de la croissance</h3>
+    <p>L'église locale est le principal moyen de grâce que Dieu a établi pour la croissance des croyants. C'est l'espace privilégié où l'on apprend à marcher par la foi en la Parole de Dieu, et non selon ses propres voies, ses sentiments ou ses ressentis. Se soumettre à une communauté est un acte de renoncement pour apprendre à suivre les voies du Seigneur plutôt que les nôtres.</p>
+
+    <h3>1.3. Les piliers de l'unité</h3>
+    <p>L'unité de l'Église primitive, décrite dans Actes 2:42, ne reposait pas sur des projets humains mais sur quatre piliers fondamentaux qui bâtissent et maintiennent la communion :</p>
+    <table>
+        <tr><th>Pilier</th><th>Son Rôle pour l'Unité</th></tr>
+        <tr><td><strong>L'enseignement des apôtres</strong></td><td>Il établit un fondement doctrinal commun, assurant que toute la communauté est ancrée dans la même vérité révélée par Christ.</td></tr>
+        <tr><td><strong>La communion fraternelle</strong></td><td>C'est le ciment des relations. Elle transforme une assemblée en une famille où les membres se connaissent, s'écoutent et prennent soin les uns des autres.</td></tr>
+        <tr><td><strong>La fraction du pain</strong></td><td>Ce rappel du sacrifice de Christ unit les croyants en les ramenant à l'œuvre fondatrice qui les a rassemblés : le corps brisé et le sang versé pour tous.</td></tr>
+        <tr><td><strong>Les prières</strong></td><td>L'acte de prier ensemble aligne les cœurs et les volontés sur Dieu, créant une dépendance et une vision communes qui transcendent les intérêts personnels.</td></tr>
+    </table>
+
+    <h2>2. Le message : un contenu intemporel et non négociable</h2>
+    
+    <h3>2.1. La puissance de la "folie" de la croix</h3>
+    <p>Le message de l'Évangile est décrit dans 1 Corinthiens 1 comme un "scandale" pour les Juifs et une "folie" pour les païens. C'est précisément dans cette nature non diluée que réside sa puissance de salut. Vouloir lui retirer son scandale, c'est lui retirer sa force.</p>
+
+    <h3>2.2. Le piège de l'adaptation culturelle</h3>
+    <p>Une tension existe entre la fidélité au message biblique et la tentation de l'adapter pour le rendre plus "pertinent".</p>
+    <ul>
+        <li><strong>L'évangile intemporel :</strong> Présente Christ crucifié, même si cela choque. Fait de l'église "la colonne et l'appui de la vérité".</li>
