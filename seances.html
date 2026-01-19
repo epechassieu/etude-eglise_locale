@@ -18,21 +18,22 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         .sessions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
 
-.intro-image {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
-    margin: 2rem auto;
-}
+        .intro-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            margin: 2rem auto;
+        }
 
-.intro-image img {
-    max-width: 100%;
-    /* width: 400px;*/
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+        .intro-image img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px; /* J'ai ajouté un petit arrondi pour faire joli */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
         
         .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.3s ease; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
@@ -44,8 +45,15 @@
         .card-title { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: bold; }
         .card-verse { font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 1rem; border-left: 3px solid var(--accent-color); padding-left: 10px; }
         
-        .btn { display: block; background-color: var(--accent-color); color: white; text-align: center; padding: 0.8rem; text-decoration: none; font-weight: bold; transition: background 0.3s; }
-        .btn:hover { background-color: #d35400; }
+        /* Styles pour les boutons doubles */
+        .btn-group { display: flex; border-top: 1px solid #eee; }
+        .btn { flex: 1; padding: 1rem; text-align: center; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: background 0.2s; }
+        
+        .btn-video { background-color: #f8f9fa; color: var(--primary-color); }
+        .btn-video:hover { background-color: #e2e6ea; }
+        
+        .btn-resume { background-color: var(--accent-color); color: white; }
+        .btn-resume:hover { background-color: #d35400; }
         
         footer { text-align: center; padding: 2rem; margin-top: 3rem; color: #666; }
     </style>
@@ -58,12 +66,12 @@
 
 <header>
     <h1>Les 15 Séances</h1>
-
-    <p>Cliquez sur une séance pour voir la vidéo</p>
+    <p>Cliquez sur une séance pour voir la vidéo ou lire le résumé</p>
 </header>
 
 <div class="container">
     <div class="sessions-grid">
+        
         <article class="card">
             <div class="card-header"><span>Fondements</span><span class="session-number">01</span></div>
             <div class="card-body">
@@ -71,8 +79,12 @@
                 <div class="card-verse">Hébreux 10:23-25</div>
                 <p>Constat des "grands brûlés" de l'église et réaffirmation de l'église locale comme ordonnance divine.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=mft35XtMZ98&t=2s" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s1" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=mft35XtMZ98&t=2s" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Leadership</span><span class="session-number">02</span></div>
             <div class="card-body">
@@ -80,8 +92,12 @@
                 <div class="card-verse">Philippiens 2:2-4</div>
                 <p>La santé d'une église dépend de la maturité des cœurs. Le modèle pastoral est David.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=niM9PXquW_E" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s2" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=niM9PXquW_E" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Foi & Obéissance</span><span class="session-number">03</span></div>
             <div class="card-body">
@@ -89,8 +105,12 @@
                 <div class="card-verse">1 Pierre 2:13</div>
                 <p>La foi n'est pas un sentiment mais une obéissance. L'église est pour l'édification des saints.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=pBXv51mzX2w" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s3" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=pBXv51mzX2w" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Vérité</span><span class="session-number">04</span></div>
             <div class="card-body">
@@ -98,8 +118,12 @@
                 <div class="card-verse">1 Timothée 3:15</div>
                 <p>L'église est la colonne de la vérité objective, pas un lieu de validation émotionnelle.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=cmkmj6OrOm8" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s4" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=cmkmj6OrOm8" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Culte</span><span class="session-number">05</span></div>
             <div class="card-body">
@@ -107,8 +131,12 @@
                 <div class="card-verse">Josué 1:6-8</div>
                 <p>Le culte doit être régulé par l'Écriture. Plaidoyer pour la prédication textuelle.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=OAhQuFleNgE" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s5" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=OAhQuFleNgE" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Croissance</span><span class="session-number">06</span></div>
             <div class="card-body">
@@ -116,8 +144,12 @@
                 <div class="card-verse">Éphésiens 4:11-16</div>
                 <p>La vraie croissance vient de la "nourriture solide".</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=UMRdVxF15is" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s6" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=UMRdVxF15is" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Intégrité</span><span class="session-number">07</span></div>
             <div class="card-body">
@@ -125,8 +157,12 @@
                 <div class="card-verse">Éphésiens 1:4</div>
                 <p>L'intégrité est le remède à l'hypocrisie religieuse.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=2BTB8BSeVhg" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s7" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=2BTB8BSeVhg" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Fondation</span><span class="session-number">08</span></div>
             <div class="card-body">
@@ -134,8 +170,12 @@
                 <div class="card-verse">Matthieu 16:18</div>
                 <p>Jésus est le bâtisseur. Distinction entre bâtir avec de l'or ou du foin.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=Qg9d_pUpvj0" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s8" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=Qg9d_pUpvj0" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Universelle</span><span class="session-number">09</span></div>
             <div class="card-body">
@@ -143,8 +183,12 @@
                 <div class="card-verse">Jean 4:21-24</div>
                 <p>L'Église remplace le Temple. L'adoration se fait désormais en Esprit et en Vérité.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=qCEoYEvOUzk" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s9" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=qCEoYEvOUzk" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Piliers</span><span class="session-number">10</span></div>
             <div class="card-body">
@@ -152,8 +196,12 @@
                 <div class="card-verse">Actes 2:42</div>
                 <p>L'unité repose sur l'enseignement, la communion, la fraction du pain et la prière.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=a5U50Tmozqg" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s10" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=a5U50Tmozqg" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Technologie</span><span class="session-number">11</span></div>
             <div class="card-body">
@@ -161,8 +209,12 @@
                 <div class="card-verse">1 Corinthiens 1:18</div>
                 <p>La technologie peut évoluer pour le diffuser, sans diluer le message.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=E6uJWsWivTE" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s11" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=E6uJWsWivTE" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Liberté</span><span class="session-number">12</span></div>
             <div class="card-body">
@@ -170,8 +222,12 @@
                 <div class="card-verse">Jean 8:32-36</div>
                 <p>La liberté chrétienne n'est pas l'autonomie individualiste, mais l'esclavage à la justice.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=9Q-BVizNICE&t" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s12" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=9Q-BVizNICE&t" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Vocation</span><span class="session-number">13</span></div>
             <div class="card-body">
@@ -179,8 +235,12 @@
                 <div class="card-verse">Actes 9:15-16</div>
                 <p>Aimer la communauté réelle plus que son rêve idéal de communauté.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=EySf72jWhqE" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s13" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=EySf72jWhqE" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Confession</span><span class="session-number">14</span></div>
             <div class="card-body">
@@ -188,8 +248,12 @@
                 <div class="card-verse">Matthieu 5:23-24</div>
                 <p>La confession est le muscle de l'unité. Confession → Pardon → Réparation.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=2Bu8iX8PeOU" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s14" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=2Bu8iX8PeOU" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
         <article class="card">
             <div class="card-header"><span>Bénédiction</span><span class="session-number">15</span></div>
             <div class="card-body">
@@ -197,13 +261,18 @@
                 <div class="card-verse">Psaume 133</div>
                 <p>C'est là, où les frères demeurent ensemble, que Dieu envoie la bénédiction.</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=g-nsMw5zWKk" class="btn" target="_blank">Voir la vidéo</a>
+            <div class="btn-group">
+                <a href="resumes.html#s15" class="btn btn-video">Lire le résumé</a>
+                <a href="https://www.youtube.com/watch?v=g-nsMw5zWKk" class="btn btn-resume" target="_blank">Voir la vidéo</a>
+            </div>
         </article>
+
     </div>
-        <div class="intro-image">
-            <img src="eglise locale essentielle et fragile.png" alt="Schéma eglise locale essentielle et fragile">
-        </div>
-    
+
+    <div class="intro-image">
+        <img src="eglise locale essentielle et fragile.png" alt="Schéma eglise locale essentielle et fragile">
+    </div>
+
 </div>
 
 <footer>
@@ -211,8 +280,4 @@
 </footer>
 
 </body>
-
 </html>
-
-
-
