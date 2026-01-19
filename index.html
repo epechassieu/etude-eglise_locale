@@ -14,10 +14,19 @@
 
         .container { max-width: 900px; margin: 0 auto; padding: 2rem; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.05); margin-top: -2rem; border-radius: 8px; }
         
-        .intro-image img {
-    max-width: 100%; /* L'image ne dépassera pas la largeur de son conteneur */
-    width: 200px;    /* Largeur fixe, ajustez selon vos besoins */
-    height: auto;    /* Conserve les proportions de l'image */
+.intro-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.intro-image img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
         
         h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem; }
@@ -224,6 +233,7 @@
 </body>
 
 </html>
+
 
 
 
