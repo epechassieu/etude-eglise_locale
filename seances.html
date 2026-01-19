@@ -18,7 +18,21 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         .sessions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
 
-        .intro-image { flex: 1; min-width: 300px; text-align: center; }
+.intro-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.intro-image img {
+    max-width: 100%;
+    /* width: 400px;*/
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
         
         .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.3s ease; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
@@ -199,3 +213,4 @@
 </body>
 
 </html>
+
